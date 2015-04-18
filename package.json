@@ -1,0 +1,20 @@
+{
+  "name": "epm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "preferGlobal": "true",
+  "bin": {
+    "epm": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "optimist": "^0.6.1",
+    "superagent": "^1.2.0",
+    "yargs": "^3.7.2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "chat-service-1.0.0": {
+        "api_key": "585a0ee4-96a4-4c41-b814-54e6ed2846b1",
+        "provider_name": "chat-service",
+        "provider_version": "1.0.0",
+        "consumer_name": "chat-ui",
+        "consumer_version": "1.0.1",
+        "required_tags": [],
+        "endpoints": {
+            "default": "http://www.chat-service.com/apis",
+            "system:x": "http://beta.chat-service.com/apis"
+        }
+    },
+    "chat-service-2.0.0": {
+        "api_key": "b264490a-d8aa-4f54-988b-ca54542705b1",
+        "provider_name": "chat-service",
+        "provider_version": "2.0.0",
+        "consumer_name": "epm",
+        "consumer_version": "1.0.0",
+        "required_tags": []
+    }
+}
