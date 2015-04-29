@@ -13,7 +13,7 @@ epe [consume | bump | cache | provide | remove]
 epe consume <name> [version] [-cv <consuming-version>] [-cn <consuming-name>]
 ```
 
-Consume a web service named <name>. If a version it provided it will attempt to setup a contract with the specified version of the service, otherwise it will create a contract with the most recent supported version.
+Consume a web service with ```<name>```. If a version it provided it will attempt to setup a contract with the specified version of the service, otherwise it will create a contract with the most recent supported version.
 
 After setting up the new contract information about the contract, including the api key and active endpoints will be saved in your project's endpoints.json file.
 
@@ -35,10 +35,10 @@ By default epe will look at your package.json file to determine the version of y
 epe remove <name> <version>
 ```
 
-Removes contracts with <version> of <name> web service. Version will accept semver version wildcards. For instance:
+Removes contracts with ```<version>``` of ```<name>``` web service. Version will accept semver version wildcards. For instance:
 
 ```bash
-epe remove chat-service 1.x [-cn <consuming-name>] [-cv <consuming-version>]
+epe remove chat-service 1.x
 ```
 
 would remove contracts with chat-service [1.0.0, 1.0.1, 1.0.2, 1.5.0] or any other version that starts with 1.
@@ -63,7 +63,9 @@ Increases the version of your current application by the specified type and then
 
 Epe uses node's semver to determine its versioning. You can read the full documentation on the semver site, but here is a quick breakdown:
 
+```
 <major>.<minor>.<patch>
+```
 
 * Major - this is the first number of the version. Major versions should be increased when the new version is not backward compatible with earlier versions.
 * Minor - this is the second number of the version. It should be increased when new non-breaking features are being added to the application.
