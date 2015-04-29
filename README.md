@@ -2,7 +2,7 @@
 
 epe is a simple command line tool for interacting with an instance of the endpoint exchange. The goal is to provide a intuitive tool for consuming web services through a registry.
 
-## Usage
+## usage
 
 ```bash
 epe [consume | bump | cache | provide | remove]
