@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+global.localRequire = function(moduleName){
+  return require(__dirname + "/" + moduleName);
+}
 var yargs = require('yargs')
-  .usage('Usage: epm <command> [options]')
+  .usage('Usage: epm <command>')
   .command('consume', 'Consume a webservice from the registry')
   .command('cache', 'Grab a local copy of your endpoints and their api keys')
   .command('provide', 'List your service as a provider')
@@ -11,11 +14,11 @@ var yargs = require('yargs')
 var command = yargs.argv._[0];
 
 var commands = [];
-commands.push(require('./commands/consume'));
-commands.push(require('./commands/cache'));
-commands.push(require('./commands/remove'));
-commands.push(require('./commands/provide'));
-commands.push(require('./commands/bump'));
+commands.push(localRequire('commands/consume'));
+commands.push(localRequire('commands/cache'));
+commands.push(localRequire('commands/remove'));
+commands.push(localRequire('commands/provide'));
+commands.push(localRequire('commands/bump'));
 
 commands.some(function(currentCommand){
   if(currentCommand.accepts(command)) {
