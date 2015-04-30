@@ -1,6 +1,6 @@
 var yargs = require('yargs');
 var request = require('superagent');
-var paramOrDetails = require('../utils/exists');
+var paramOrDetails = localRequire('utils/exists');
 
 module.exports.accepts = function(command){
   return command == 'provide';
@@ -25,7 +25,7 @@ module.exports.execute = function(){
     app.endpoints = newEndpoint;
   }
   request
-    .post('http://localhost:3000/version/update')
+    .post('http://localhost:3000/application/version')
     .send(app)
     .end(function(err, res){
       console.log('Now providing ' + appDetails.name + '-' + appDetails.version + ' in the exchange.');
