@@ -19,6 +19,7 @@ commands.push(localRequire('commands/cache'));
 commands.push(localRequire('commands/remove'));
 commands.push(localRequire('commands/provide'));
 commands.push(localRequire('commands/bump'));
+commands.push(localRequire('commands/update'));
 
 commands.some(function(currentCommand){
   if(currentCommand.accepts(command)) {
