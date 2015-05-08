@@ -9,6 +9,7 @@ var yargs = require('yargs')
   .command('provide', 'List your service as a provider')
   .command('bump', 'Bump the current provider version and list it as consumable')
   .alias('bump-version')
+  .command('update', 'Update an endpoint that you provide')
   .demand(1)
 
 var command = yargs.argv._[0];
