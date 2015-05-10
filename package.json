@@ -1,19 +1,20 @@
 {
-    "name": "epe",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "preferGlobal": "true",
-    "bin": {
-        "epe": "index.js"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "superagent": "^1.2.0",
-        "yargs": "^3.7.2"
-    }
+  "name": "epe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "preferGlobal": "true",
+  "bin": {
+    "epe": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "find-parent-dir": "^0.3.0",
+    "superagent": "^1.2.0",
+    "yargs": "^3.7.2"
+  }
 }
