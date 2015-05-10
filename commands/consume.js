@@ -4,6 +4,7 @@ var appDetails = require('../metadata/config').package();
 var yargs = require('yargs');
 var request = require('superagent');
 var fs = require('fs');
+var endpointsFileName = requireLocal('config').endpointsFileName;
 
 module.exports.accepts = function(command){
   return command == 'consume';
@@ -28,7 +29,7 @@ module.exports.execute = function(){
       }
     })
     .end(function(err, res){
-      var outputFilename = 'endpoints.json';
+      var outputFilename = endpointsFileName;
       var newContracts = res.body;
       Object.keys(newContracts).forEach(function(key){
         endpoints[key] = res.body[key];
