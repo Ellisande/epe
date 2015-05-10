@@ -4,6 +4,7 @@ var fs = require('fs');
 var paramOrDetails = require('../utils/exists');
 var endpoints = require('../metadata/config').endpoints();
 var appDetails = require('../metadata/config').package();
+var endpointsFileName = localRequire('config').endpointsFileName;
 
 module.exports.accepts = function(command){
   return command == 'cache';
@@ -23,7 +24,7 @@ module.exports.execute = function(){
       var providerString = contract.provider_name + '-' + contract.provider_version;
       endpoints[providerString] = contract;
     });
-    fs.writeFile('endpoints.json', JSON.stringify(endpoints, null, 4));
+    fs.writeFile(endpointsFileName, JSON.stringify(endpoints, null, 4));
     console.log('Updated ' + Object.keys(endpoints).length + ' contract(s).')
   });
 }
