@@ -4,6 +4,7 @@ var semver = require('semver');
 var paramOrDetails = require('../utils/exists');
 var appDetails = require('../metadata/config').package();
 var provide = require('./provide').execute;
+var packageFileName = localRequire('config').packageFileName;
 
 module.exports.accepts = function(command){
   return command == 'bump' || command == 'bump-version';
@@ -22,7 +23,7 @@ module.exports.execute = function(){
       .demand(2, 'When bumping a major version an endpoint is required. Endpoints cannot be automatically be carried forward for major versions')
       .argv;
   }
-  var outputFilename = 'package.json';
+  var outputFilename = packageFileName;
   appDetails.version = semver.inc(appDetails.version, bumpType);
   fs.writeFileSync(outputFilename, JSON.stringify(appDetails, null, 4));
   provide();
